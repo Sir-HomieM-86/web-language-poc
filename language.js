@@ -1,8 +1,9 @@
 $( document ).ready(function() {
 	loadLanguageFunction();
 	
+	//select all drop down langauge items, which have class 'lang-type'. Assign a click event to them
     $('.lang-type').click(function() {
-		var elementID = $(this).attr('id');
+		var elementID = $(this).attr('id'); //get the langauge ID - it is unique per element
 		console.log("event trigger id is " + elementID);
 		myLanguageFunction(elementID);
 	});
@@ -10,7 +11,7 @@ $( document ).ready(function() {
 
 
 function loadLanguageFunction(){
-	//try load the local language if available
+	//try load the local language ID if available
 	var savedLang = localStorage.getItem('lang');
 	
 	if(!savedLang) //if null, default to English (first time use)
